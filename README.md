@@ -55,16 +55,16 @@ Vectorization主要是對Mandelbrot Set的演算法進行SIMD的加速，但是o
      2. 在Hybrid中，我用多process，load balancing的情況。
 #### Analysis of Results: 
 ##### Time Profile
-![1](https://i.imgur.com/l7t4pYG.png)
-*圖1, 單process，thread數量對時間的影響* 
-![2](https://i.imgur.com/N1AlW6v.png)
-*圖2, process數量與時間的比較*
+![1](https://i.imgur.com/l7t4pYG.png)<br>
+*圖1, 單process，thread數量對時間的影響* <br>
+![2](https://i.imgur.com/N1AlW6v.png)<br>
+*圖2, process數量與時間的比較*<br>
 ##### Strong Scalability
-![3](https://i.imgur.com/N6JZ9TO.png)
-*圖3, 單process，thread數量對時間的影響*
+![3](https://i.imgur.com/N6JZ9TO.png)<br>
+*圖3, 單process，thread數量對時間的影響*<br>
 ##### Load Balancing
-![4](https://i.imgur.com/ZrDyGYf.png)
-*圖4, 多process，load balancing的情況(8 process)*
+![4](https://i.imgur.com/ZrDyGYf.png)<br>
+*圖4, 多process，load balancing的情況(8 process)*<br>
 #### Optimization Strategies
 其實我很猶豫要不要放這張(圖2)，但它確實是測出來的數據。
 如上所說，因為我在coding過程中，發現加入太多openmp程式會導致make出現錯誤，所以在最後的版本，每個process中除了SIMD以外使用openmp平行的不多，我認為是這個原因導致在Hybrid中沒有良好的Scalability。
